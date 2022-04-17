@@ -1,12 +1,13 @@
 package com.example.sgogsammenlign;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.sgogsammenlign.model.Product;
 import com.example.sgogsammenlign.model.ProductViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private EditText editText;
     private ProductViewModel viewModel;
+    private TextView textView;
 
 
     @Override
@@ -46,7 +48,16 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView imageView = findViewById(R.id.imageView);
         editText = findViewById(R.id.editText);
+        textView = findViewById(R.id.text_dashboard);
         viewModel = new ViewModelProvider(this).get(ProductViewModel.class);
+
+//
+        viewModel.getSearchedProduct().observe(this,titles -> {
+            textView.append(titles.getTitle());
+//            for (Product listOfProducts : titles ) {
+//                textView.append(listOfProducts.getTitle() + "\n");
+//            }
+        });
 
         viewModel.getSearchedProduct().observe(this, product -> {
             Glide.with(this).load(product.getImgUrl()).into(imageView);
@@ -56,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void searchForProduct(View view)
     {
-        System.out.println(editText.getText().toString());
+
+
         viewModel.searchForProduct(editText.getText().toString());
     }
 
