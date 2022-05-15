@@ -1,31 +1,31 @@
 package com.example.sgogsammenlign.model;
 
 public class Product {
-    private final int id;
-    private final int product_id;
+    private final String id;
+    private final String prod_id;
     private final String title;
     private final String description;
-    private final String imgUrl;
-    private final String productUrl;
-    private final int price;
+    private final String img;
+    private final String link;
+    private final float price;
 
 
-    public Product(int id, int product_id, String title, String description, String imgUrl, String productUrl, int price) {
+    public Product(String id, String product_id, String title, String description, String imgUrl, String link, float price) {
         this.id = id;
-        this.product_id = product_id;
+        this.prod_id = product_id;
         this.title = title;
         this.description = description;
-        this.imgUrl = imgUrl;
-        this.productUrl = productUrl;
+        this.img = imgUrl;
+        this.link = link;
         this.price = price;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public int getProduct_id() {
-        return product_id;
+    public String getProd_id() {
+        return prod_id;
     }
 
     public String getTitle() {
@@ -36,15 +36,15 @@ public class Product {
         return description;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
+    public String getImg() {
+        return img;
     }
 
-    public String getProductUrl() {
-        return productUrl;
+    public String getLink() {
+        return link;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 }

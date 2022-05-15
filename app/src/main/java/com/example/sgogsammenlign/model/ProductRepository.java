@@ -2,8 +2,12 @@ package com.example.sgogsammenlign.model;
 
 import android.util.Log;
 
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -13,7 +17,7 @@ import retrofit2.internal.EverythingIsNonNull;
 public class ProductRepository {
 
     private static ProductRepository instance;
-    private final MutableLiveData<Product> searchedProduct;
+    private MutableLiveData<List<Product>> searchedProduct;
 
     private ProductRepository()
     {
@@ -29,12 +33,12 @@ public class ProductRepository {
         return instance;
     }
 
-    public LiveData<Product> getSearchedProduct()
+    public LiveData<List<Product>> getSearchedProduct()
     {
         return searchedProduct;
     }
 
-    public void searchForProduct(String productName)
+    public LiveData<List<Product>> searchForProduct(String productName)
     {
         ProductApi productApi = ServiceGenerator.getProductApi();
         Call<ProductResponse> call = productApi.getProduct(productName);
@@ -48,7 +52,7 @@ public class ProductRepository {
                 {
                     // maybe the first line should be deleted. but it will give nullpointer
                     assert response.body() != null;
-                    searchedProduct.setValue(response.body().getProduct());
+                    searchedProduct.setValue(response.body().getProducts());
 
                 }
             }
@@ -56,9 +60,12 @@ public class ProductRepository {
             @Override
             public void onFailure(Call<ProductResponse> call, Throwable t)
             {
-                Log.i("Retrofit","Something went wrong");
+                Log.i("Retrofit",t.getMessage());
             }
         });
+
+        System.out.println("size efter ? " + searchedProduct.getValue());
+        return searchedProduct;
     }
 
 

@@ -1,19 +1,17 @@
 package com.example.sgogsammenlign.model;
 
+import androidx.lifecycle.LiveData;
+
+import java.util.List;
+
 public class ProductResponse {
 
+    private List<Product> suggestions;
 
-    private  int id;
-    private  int product_id;
-    private  String title;
-    private  String description;
-    private  String imgUrl;
-    private  String productUrl;
-    private int price;
 
-    public Product getProduct()
+    public List<Product> getProducts()
     {
-        return new Product(id,product_id,title,description,imgUrl,productUrl,price);
+        return suggestions;
 
     }
 

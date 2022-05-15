@@ -1,39 +1,48 @@
 package com.example.sgogsammenlign;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.example.sgogsammenlign.model.Product;
-import com.example.sgogsammenlign.model.ProductViewModel;
+import com.example.sgogsammenlign.databinding.ActivityMainBinding;
+import com.example.sgogsammenlign.ui.SignInActivity;
+import com.example.sgogsammenlign.ui.SignInViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.sgogsammenlign.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private EditText editText;
-    private ProductViewModel viewModel;
-    private TextView textView;
+    private SignInActivity signInActivity;
+    private SignInViewModel signInViewModel;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        signInViewModel = new ViewModelProvider(this).get(SignInViewModel.class);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        Toolbar toolbar;
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -45,31 +54,26 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-
-        ImageView imageView = findViewById(R.id.imageView);
-        editText = findViewById(R.id.editText);
-        textView = findViewById(R.id.text_dashboard);
-        viewModel = new ViewModelProvider(this).get(ProductViewModel.class);
-
-//
-        viewModel.getSearchedProduct().observe(this,titles -> {
-            textView.append(titles.getTitle());
-//            for (Product listOfProducts : titles ) {
-//                textView.append(listOfProducts.getTitle() + "\n");
-//            }
-        });
-
-        viewModel.getSearchedProduct().observe(this, product -> {
-            Glide.with(this).load(product.getImgUrl()).into(imageView);
-        });
-
     }
 
-    public void searchForProduct(View view)
-    {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
 
-
-        viewModel.searchForProduct(editText.getText().toString());
+        return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.logOut) {
+            signInViewModel.signOut();
+            Toast.makeText(MainActivity.this, "Successfully logged out", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
