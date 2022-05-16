@@ -1,6 +1,5 @@
 package com.example.sgogsammenlign.ui.dashboard;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -19,16 +17,15 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.sgogsammenlign.R;
-import com.example.sgogsammenlign.databinding.FragmentDashboardBinding;
-import com.example.sgogsammenlign.model.Product;
-import com.example.sgogsammenlign.model.ProductAdapter;
-import com.example.sgogsammenlign.model.ProductViewModel;
+import com.example.sgogsammenlign.databinding.FragmentProdukterBinding;
+import com.example.sgogsammenlign.model.product.Product;
+import com.example.sgogsammenlign.model.product.ProductAdapter;
+import com.example.sgogsammenlign.model.product.ProductViewModel;
 
 public class DashboardFragment extends Fragment  implements ProductAdapter.OnListItemClickListener {
 
-    private FragmentDashboardBinding binding;
+    private FragmentProdukterBinding binding;
 
     private EditText editText;
     private ProductViewModel viewModel;
@@ -37,25 +34,25 @@ public class DashboardFragment extends Fragment  implements ProductAdapter.OnLis
     RecyclerView recyclerView;
     Button requestButton;
     ProductAdapter adapter = new ProductAdapter(this);
+    DashboardViewModel dashboardViewModel;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+         dashboardViewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentProdukterBinding.inflate(inflater, container, false);
 
         View root = binding.getRoot();
 
-        requestButton =  root.findViewById(R.id.requestButton);
-        requestButton.setOnClickListener(view -> searchForProduct());
+        requestButton =  root.findViewById(R.id.requestButtonProduct);
+        requestButton.setOnClickListener(view -> searchForProduct(editText));
 
 
-        editText = root.findViewById(R.id.editText);
+        editText = root.findViewById(R.id.editTextProduct);
 
         // the recycler view
-        recyclerView = root.findViewById(R.id.rv);
+        recyclerView = root.findViewById(R.id.rvProduct);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.hasFixedSize();
 
@@ -73,8 +70,9 @@ public class DashboardFragment extends Fragment  implements ProductAdapter.OnLis
     }
 
 
-    public void searchForProduct()
+    public void searchForProduct(EditText editText)
     {
+
         viewModel.searchForProduct(editText.getText().toString()).observe(getViewLifecycleOwner(),products ->   {
             adapter.addProducts(products);
 
@@ -88,6 +86,9 @@ public class DashboardFragment extends Fragment  implements ProductAdapter.OnLis
         Intent browserIntent = new Intent(Intent.ACTION_VIEW);
         browserIntent.setData(Uri.parse(product.getLink()));
         startActivity(browserIntent);
+
+
+
 
     }
 }

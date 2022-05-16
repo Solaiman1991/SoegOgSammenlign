@@ -3,17 +3,37 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1125" />
         <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/drawable/border.xml" value="0.154" />
-        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_dashboard.xml" value="0.264" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1125" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1125" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1125" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/drawable/ic_launchersola_background.xml" value="0.1115" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/drawable/ic_launchersolas_background.xml" value="0.1125" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1125" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/drawable/ic_outline_link_24.xml" value="0.1125" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/activity_maps.xml" value="0.1" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_butikker.xml" value="0.2" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_home.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_kort.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_map.xml" value="0.1" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_notifications.xml" value="0.264" />
         <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_products.xml" value="0.1" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_products_rv.xml" value="0.4" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_produkter.xml" value="0.2590909090909091" />
         <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_show_product.xml" value="0.12083333333333333" />
         <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_show_product_list.xml" value="0.12083333333333333" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/fragment_stores.xml" value="0.1" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/frame_layout.xml" value="0.1" />
         <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/layout/signin_activity.xml" value="0.14427083333333332" />
         <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/menu/bottom_nav_menu.xml" value="0.264" />
         <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/menu/main_menu.xml" value="0.25" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1125" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/mipmap-anydpi-v26/ic_launchersola.xml" value="0.1125" />
+        <entry key="..\:/Users/Solaiman/AndroidStudioProjects/SgOgSammenlign/app/src/main/res/mipmap-anydpi-v26/ic_launchersola_round.xml" value="0.1125" />
       </map>
     </option>
   </component>
