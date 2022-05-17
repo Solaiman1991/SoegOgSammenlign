@@ -3,20 +3,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@drawable/border"
+    android:layout_margin="5dp">
 
 
     <TextView
+        android:id="@+id/brand"
+        android:layout_width="66dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="8dp"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/zip"
+        app:layout_constraintStart_toEndOf="@+id/zip" />
+
+    <TextView
         android:id="@+id/city"
-        android:layout_width="419dp"
-        android:layout_height="244dp"
-        android:layout_marginTop="164dp"
-        android:background="#F6947F"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/zip"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/kort"
+        android:layout_width="56dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="15dp"
+        android:background="#FFFFFF"
+        android:src="@mipmap/trolly_foreground"
         android:textAlignment="center"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintStart_toEndOf="@+id/brand"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/zip"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/city"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

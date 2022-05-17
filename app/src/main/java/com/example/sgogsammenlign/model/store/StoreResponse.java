@@ -6,12 +6,19 @@ import java.util.List;
 public class StoreResponse {
 
 
-    private List<Store> address;
+    private Address address;
+    private String brand;
+    private double[] coordinates;
 
 
-    public List<Store> getStores()
+    public Store getStore()
     {
-        return address;
+        return new Store(address.city, address.zip, coordinates,brand);
 
+    }
+
+    static class Address {
+        public String city;
+        public String zip;
     }
 }

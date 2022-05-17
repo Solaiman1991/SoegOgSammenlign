@@ -14,6 +14,6 @@ public interface StoreApi {
     @GET("v2/stores")
 
         // can also add more paths here
-    Call<StoreResponse> getStore(@Query("city") String city);
+    Call<List<StoreResponse>> getStore(@Query("city") String city);
 
 }

@@ -56,6 +56,8 @@ public class SignInActivity extends AppCompatActivity {
                 .createSignInIntentBuilder()
                 .setAvailableProviders(providers)
                 .setLogo(com.google.android.gms.base.R.drawable.common_google_signin_btn_text_light)
+                .setLogo(R.mipmap.borat_round)
+
                 .build();
 
         activityResultLauncher.launch(signInIntent);

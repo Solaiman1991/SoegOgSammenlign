@@ -36,6 +36,8 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
 
 
         holder.title.setText(stores.get(position).getCity());
+        holder.brand.setText(stores.get(position).getBrand());
+        holder.zip.setText(stores.get(position).getZip());
 
     }
 
@@ -60,6 +62,8 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
 
 
         TextView title;
+        TextView brand;
+        TextView zip;
 
 
 
@@ -72,6 +76,9 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> 
                 }
             });
             title = itemView.findViewById(R.id.city);
+            brand = itemView.findViewById(R.id.brand);
+            zip = itemView.findViewById(R.id.zip);
+
 
         }
 

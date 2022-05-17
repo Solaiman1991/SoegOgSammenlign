@@ -30,11 +30,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvStore"
-        android:layout_width="1177dp"
-        android:layout_height="788dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="406dp"
+        android:layout_height="532dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextStore" />
 
@@ -44,7 +44,7 @@
         android:layout_height="22dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
-        android:text="           By             PostNr          Butik              Kort"
+        android:text="               By                PostNr         Butik                   Kort"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#17609A"
         android:typeface="sans"
