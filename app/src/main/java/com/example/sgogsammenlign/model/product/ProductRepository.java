@@ -51,7 +51,6 @@ public class ProductRepository {
             {
                 if (response.code()==200)
                 {
-                    // maybe the first line should be deleted. but it will give nullpointer
                     assert response.body() != null;
                     searchedProduct.setValue(response.body().getProducts());
 

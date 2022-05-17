@@ -12,6 +12,9 @@ public class ServiceGenerator {
     private static ProductApi productApi;
     private static StoreApi storeApi;
 
+
+// i could just have used the same method , since both API's are the same. But i did not think about it at first.
+
     public static ProductApi getProductApi() {
         if (productApi == null) {
             productApi = new Retrofit.Builder().
