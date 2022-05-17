@@ -12,21 +12,32 @@
         android:id="@+id/requestButtonStore"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="16dp"
         android:text="Søg"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextStore"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextStoreBrand"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/editTextStore"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="149dp"
+        android:layout_height="42dp"
         android:layout_marginTop="48dp"
-        android:hint="By Navn"
+        android:hint="By navn"
         app:layout_constraintEnd_toStartOf="@id/requestButtonStore"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/editTextStoreBrand"
+        android:layout_width="149dp"
+        android:layout_height="42dp"
+        android:hint="Butiksnavn"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextStore"
+        app:layout_constraintEnd_toStartOf="@+id/requestButtonStore"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/editTextStore" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvStore"

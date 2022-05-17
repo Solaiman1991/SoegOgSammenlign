@@ -29,8 +29,8 @@ public class NotificationsFragment extends Fragment implements StoreAdapter.OnLi
 
 
     private EditText editText;
+    private EditText editTextbrand;
     private StoreViewModel viewModel;
-    private TextView textView;
     RecyclerView recyclerView;
     Button requestButton;
     StoreAdapter adapter = new StoreAdapter(this);
@@ -49,6 +49,7 @@ public class NotificationsFragment extends Fragment implements StoreAdapter.OnLi
 
 
         editText = root.findViewById(R.id.editTextStore);
+        editTextbrand = root.findViewById(R.id.editTextStoreBrand);
 
         // the recycler view
         recyclerView = root.findViewById(R.id.rvStore);
@@ -70,7 +71,7 @@ public class NotificationsFragment extends Fragment implements StoreAdapter.OnLi
     }
 
     public void searchForStore() {
-        viewModel.searchForStore(editText.getText().toString()).observe(getViewLifecycleOwner(), stores -> {
+        viewModel.searchForStore(editText.getText().toString(),editTextbrand.getText().toString()).observe(getViewLifecycleOwner(), stores -> {
             adapter.addStores(stores);
 
         });
@@ -83,9 +84,6 @@ public class NotificationsFragment extends Fragment implements StoreAdapter.OnLi
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
-
-//        Intent intent = new Intent(getActivity(), MainActivityList.class);
-//        startActivity(intent);
 
     }
 }

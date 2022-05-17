@@ -40,10 +40,10 @@ public class StoreRepository {
         return searchedStore;
     }
 
-    public LiveData<List<Store>> searchForStore(String storeCityName)
+    public LiveData<List<Store>> searchForStore(String storeCityName, String brand)
     {
         StoreApi storeApi = ServiceGenerator.getStoreApi();
-        Call<List<StoreResponse>> call = storeApi.getStore(storeCityName);
+        Call<List<StoreResponse>> call = storeApi.getStore(storeCityName,brand);
         call.enqueue(new Callback<List<StoreResponse>> ()
         {
             @EverythingIsNonNull
@@ -52,7 +52,6 @@ public class StoreRepository {
             {
                 if (response.code()==200)
                 {
-                    // maybe the first line should be deleted. but it will give nullpointer
                     assert response.body() != null;
                     List<StoreResponse> storeResponseList = response.body();
 
